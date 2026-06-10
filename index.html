@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quiz Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                🤖 AI Quiz Generator
+            </div>
+        </header>
+
+        <!-- Topic Input Screen -->
+        <section id="setupScreen" class="card">
+
+            <h1>Generate Your Quiz</h1>
+
+            <p class="subtitle">
+                Enter any topic and let AI create a personalized quiz for you.
+            </p>
+
+            <div class="input-group">
+
+                <label>Quiz Topic</label>
+
+                <input
+                    type="text"
+                    id="topicInput"
+                    placeholder="Example: JavaScript, Space, History, AI"
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Difficulty</label>
+
+                <select id="difficulty">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+
+            </div>
+
+            <button id="generateBtn">
+                Generate AI Quiz
+            </button>
+
+        </section>
+
+        <!-- Loading Screen -->
+        <section id="loadingScreen" class="card hidden">
+
+            <div class="loader"></div>
+
+            <h2>Generating Questions...</h2>
+
+            <p>
+                AI is preparing your quiz.
+            </p>
+
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quizScreen" class="card hidden">
+
+            <div class="quiz-top">
+
+                <div class="question-count">
+                    Question <span id="currentQuestion">1</span>/5
+                </div>
+
+                <div class="timer">
+                    ⏳ <span id="timer">30</span>s
+                </div>
+
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+
+                <div
+                    id="progressBar"
+                    class="progress-bar">
+                </div>
+
+            </div>
+
+            <!-- Question -->
+            <h2 id="questionText">
+                Question will appear here
+            </h2>
+
+            <!-- Options -->
+            <div
+                id="optionsContainer"
+                class="options-container">
+            </div>
+
+            <button
+                id="nextBtn"
+                class="next-btn">
+                Next Question
+            </button>
+
+        </section>
+
+        <!-- Result Screen -->
+        <section id="resultScreen" class="card hidden">
+
+            <h1>Quiz Completed 🎉</h1>
+
+            <div class="score-box">
+
+                <h2>Your Score</h2>
+
+                <div id="scoreDisplay">
+                    0 / 5
+                </div>
+
+            </div>
+
+            <div
+                id="explanationsContainer"
+                class="explanations">
+            </div>
+
+            <button id="restartBtn">
+                Generate New Quiz
+            </button>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
